@@ -8,19 +8,11 @@ import java.io.File;
  */
 public class Editor {
 
-    private File arquivo;
     public final EventManager eventos = new EventManager();
 
-    public void abrirArquivo(String caminho) {
-        this.arquivo = new File(caminho);
-        eventos.disparar("abrir", arquivo);
-    }
-
-    public void salvarArquivo() throws Exception {
-        if (arquivo != null) {
-            eventos.disparar("salvar", arquivo);
-        } else {
-            throw new Exception("Nenhum arquivo foi aberto.");
-        }
+    public void acionarEvento(String tipoEvento, String origem) {
+        // Em vez de File, passamos um "arquivo simulado" com nome = origem do evento
+        File eventoSimulado = new File(origem);
+        eventos.disparar(tipoEvento, eventoSimulado);
     }
 }

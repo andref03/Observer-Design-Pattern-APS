@@ -2,6 +2,7 @@ br\edu\ifnmg\notificacao\Main.class
 br\edu\ifnmg\notificacao\NotificacaoListener.class
 br\edu\ifnmg\notificacao\NotificadorSMS.class
 br\edu\ifnmg\notificacao\EventManager.class
+br\edu\ifnmg\notificacao\Testes.class
 br\edu\ifnmg\notificacao\NotificadorApp.class
 br\edu\ifnmg\notificacao\Editor.class
 br\edu\ifnmg\notificacao\NotificadorEmail.class

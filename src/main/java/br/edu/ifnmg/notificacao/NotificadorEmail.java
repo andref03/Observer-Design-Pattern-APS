@@ -16,7 +16,7 @@ public class NotificadorEmail implements NotificacaoListener {
 
     @Override
     public void notificar(String evento, File arquivo) {
-        System.out.println("[EMAIL] Para: " + email + " | Evento: " + evento + " | Arquivo: " + arquivo.getName());
+        System.out.println("[EMAIL] Para: " + email + " | Evento: " + evento + " | Origem: " + arquivo.getName());
     }
 
 }
