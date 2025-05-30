@@ -8,22 +8,29 @@ public class Testes {
 
     // Teste 01: Simula uso do LinkedIn
     public static void teste01() {
+        
+        // Apenas para melhorar visibilidade
+        separador();
+        
         Editor editor = new Editor();
         String empresa = "LinkedIn";
 
         editor.eventos.registrar("nova_conexao", new NotificadorEmail("andre@yahoo.com.br"));
-        editor.eventos.registrar("nova_conexao", new NotificadorApp("usuarioLinkedIn"));
-        editor.eventos.registrar("mensagem_recebida", new NotificadorSMS("+55 038 9 9999-9999"));
-        editor.eventos.registrar("perfil_visualizado", new NotificadorApp("usuarioLinkedIn"));
+        editor.eventos.registrar("nova_conexao", new NotificadorApp("@joao.kennedy"));
+        editor.eventos.registrar("mensagem_recebida", new NotificadorSMS("+55 38 99999-9999"));
+        editor.eventos.registrar("perfil_visualizado", new NotificadorApp("@rafael.josebc"));
 
-        System.out.println(">>> [LinkedIn] Nova conexão recebida:");
-        editor.acionarEvento("nova_conexao", "João Silva");
+        System.out.println(">>> [" + empresa + "] Nova conexão recebida:");
+        editor.acionarEvento("nova_conexao", "João Kennedy S. S.");
 
-        System.out.println("\n>>> [LinkedIn] Mensagem recebida:");
-        editor.acionarEvento("mensagem_recebida", "Recrutador da Empresa X");
+        System.out.println("\n>>> [" + empresa + "] Mensagem recebida:");
+        editor.acionarEvento("mensagem_recebida", "Heuller Ramos - Recrutador");
 
-        System.out.println("\n>>> [LinkedIn] Alguém visualizou seu perfil:");
-        editor.acionarEvento("perfil_visualizado", "Maria Souza");
+        System.out.println("\n>>> [" + empresa + "] Alguém visualizou seu perfil:");
+        editor.acionarEvento("perfil_visualizado", "André Felipe");
+        
+        // Apenas para melhorar visibilidade
+        separador();
     }
 
     // Teste 02: Simula notificações do Instagram
@@ -31,42 +38,38 @@ public class Testes {
         Editor editor = new Editor();
         String empresa = "Instagram";
 
-        editor.eventos.registrar("nova_seguidora", new NotificadorApp("usuarioInsta"));
-        editor.eventos.registrar("curtida_recebida", new NotificadorEmail("meuemail@insta.com"));
-        editor.eventos.registrar("comentario_novo", new NotificadorSMS("+55 11 99999-8888"));
+        editor.eventos.registrar("novo_seguidor", new NotificadorApp("@andre.felipe"));
+        editor.eventos.registrar("curtida_recebida", new NotificadorEmail("andre.felipe@email.com"));
+        editor.eventos.registrar("comentario_novo", new NotificadorSMS("+55 038 9 8888-7777"));
 
-        System.out.println("\n>>> [Instagram] Nova seguidora:");
-        editor.acionarEvento("nova_seguidora", "Camila Andrade");
+        System.out.println("\n>>> [" + empresa + "] Novo seguidor:");
+        editor.acionarEvento("novo_seguidor", "Heuller Ramos");
 
-        System.out.println("\n>>> [Instagram] Alguém curtiu sua foto:");
-        editor.acionarEvento("curtida_recebida", "foto_praia.png");
+        System.out.println("\n>>> [" + empresa + "] Alguém curtiu sua foto:");
+        editor.acionarEvento("curtida_recebida", "Foto: Viagem ao Japão");
 
-        System.out.println("\n>>> [Instagram] Novo comentário:");
-        editor.acionarEvento("comentario_novo", "Pedro comentou: Muito bom!");
+        System.out.println("\n>>> [" + empresa + "] Novo comentário:");
+        editor.acionarEvento("comentario_novo", "João Kennedy comentou: 'Incrível'");
+        
+        // Apenas para melhorar visibilidade
+        separador();
     }
 
-    // Teste 03: Simula alertas do GitHub
+    // Teste 03: Evento sem ouvintes registrados
     public static void teste03() {
         Editor editor = new Editor();
-        String empresa = "GitHub";
+        String empresa = "Exemplo";
 
-        editor.eventos.registrar("novo_commit", new NotificadorApp("devUser"));
-        editor.eventos.registrar("novo_commit", new NotificadorEmail("dev@github.com"));
-        editor.eventos.registrar("pull_request_aberto", new NotificadorSMS("+55 21 97777-1111"));
-
-        System.out.println("\n>>> [GitHub] Novo commit realizado:");
-        editor.acionarEvento("novo_commit", "Commit: refatora código de login");
-
-        System.out.println("\n>>> [GitHub] Pull request aberto:");
-        editor.acionarEvento("pull_request_aberto", "PR#42 - feature/cadastro-usuario");
+        System.out.println("\n>>> [" + empresa + "] Evento sem ouvintes registrados:");
+        editor.acionarEvento("evento_inexistente", "Nenhum notificador registrado");
     }
-
-    // Teste 04: Evento sem ouvintes registrados
-    public static void teste04() {
-        Editor editor = new Editor();
-
-        System.out.println("\n>>> [Teste] Evento sem ouvintes registrados:");
-        editor.acionarEvento("evento_inexistente", "Teste sem notificadores");
+    
+    // Apenas para melhorar visibilidade
+    private static void separador(){
+        System.out.println("\n");
+        System.out.println("------------------------------"
+                + "-------------------------------------------------------------");
+        System.out.println("");
     }
     
 }

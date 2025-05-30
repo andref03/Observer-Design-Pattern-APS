@@ -16,6 +16,6 @@ public class NotificadorApp implements NotificacaoListener {
 
     @Override
     public void notificar(String evento, File arquivo) {
-        System.out.println("[APP] Usuário: " + usuario + " | Evento: " + evento + " | Arquivo: " + arquivo.getName());
+        System.out.println("[APP] Usuário: " + usuario + " | Evento: " + evento + " | Origem: " + arquivo.getName());
     }
 }

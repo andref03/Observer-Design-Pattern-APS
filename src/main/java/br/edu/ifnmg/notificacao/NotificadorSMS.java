@@ -16,6 +16,6 @@ public class NotificadorSMS implements NotificacaoListener {
 
     @Override
     public void notificar(String evento, File arquivo) {
-        System.out.println("[SMS] Para: " + numero + " | Evento: " + evento + " | Arquivo: " + arquivo.getName());
+        System.out.println("[SMS] Para: " + numero + " | Evento: " + evento + " | Origem: " + arquivo.getName());
     }
 }
