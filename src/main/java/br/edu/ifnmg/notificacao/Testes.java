@@ -8,10 +8,10 @@ public class Testes {
 
     // Teste 01: Simula uso do LinkedIn
     public static void teste01() {
-        
+
         // Apenas para melhorar visibilidade
         separador();
-        
+
         Editor editor = new Editor();
         String empresa = "LinkedIn";
 
@@ -28,7 +28,7 @@ public class Testes {
 
         System.out.println("\n>>> [" + empresa + "] Alguém visualizou seu perfil:");
         editor.acionarEvento("perfil_visualizado", "André Felipe");
-        
+
         // Apenas para melhorar visibilidade
         separador();
     }
@@ -50,26 +50,50 @@ public class Testes {
 
         System.out.println("\n>>> [" + empresa + "] Novo comentário:");
         editor.acionarEvento("comentario_novo", "João Kennedy comentou: 'Incrível'");
-        
+
         // Apenas para melhorar visibilidade
         separador();
     }
 
-    // Teste 03: Evento sem ouvintes registrados
+    // Teste 03: Registra, remove e dispara evento para verificar se o listener foi removido corretamente
     public static void teste03() {
+        Editor editor = new Editor();
+        String empresa = "Twitter";
+
+        // Criando o listener
+        NotificadorApp notificadorApp = new NotificadorApp("@andre_felipe");
+
+        // Registrando o listener para o evento "nova_mensagem"
+        editor.eventos.registrar("nova_mensagem", notificadorApp);
+
+        System.out.println(">>> [" + empresa + "] Nova mensagem recebida (antes da remoção):");
+        editor.acionarEvento("nova_mensagem", "Heuller Ramos te mencionou!");
+
+        // Removendo o listener
+        editor.eventos.remover("nova_mensagem", notificadorApp);
+
+        System.out.println("\n>>> [" + empresa + "] Nova mensagem recebida (após a remoção):");
+        editor.acionarEvento("nova_mensagem", "João Kennedy também te mencionou!");
+
+        // Apenas para melhorar visibilidade
+        separador();
+    }
+
+    // Teste 04: Evento sem ouvintes registrados
+    public static void teste04() {
         Editor editor = new Editor();
         String empresa = "Exemplo";
 
         System.out.println("\n>>> [" + empresa + "] Evento sem ouvintes registrados:");
         editor.acionarEvento("evento_inexistente", "Nenhum notificador registrado");
     }
-    
+
     // Apenas para melhorar visibilidade
-    private static void separador(){
+    private static void separador() {
         System.out.println("\n");
         System.out.println("------------------------------"
                 + "-------------------------------------------------------------");
         System.out.println("");
     }
-    
+
 }

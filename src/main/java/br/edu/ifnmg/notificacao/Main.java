@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Testes.teste01(); // LinkedIn
         Testes.teste02(); // Instagram
-        Testes.teste03(); // Sem ouvintes
+        Testes.teste03(); // Twitter
+        Testes.teste04(); // Sem ouvintes
     }
 }
