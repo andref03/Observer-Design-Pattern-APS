@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  *
- * @author IFNMG
+ * @author andre
  */
 public class NotificadorEmail implements NotificacaoListener {
 

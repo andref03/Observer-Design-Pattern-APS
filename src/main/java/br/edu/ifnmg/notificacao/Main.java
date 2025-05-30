@@ -2,7 +2,7 @@ package br.edu.ifnmg.notificacao;
 
 /**
  *
- * @author IFNMG
+ * @author andre
  */
 public class Main {
 

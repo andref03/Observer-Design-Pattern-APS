@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  *
- * @author IFNMG
+ * @author andre
  */
 public class EventManager {
 
